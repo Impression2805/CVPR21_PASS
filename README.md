@@ -1,2 +1,2 @@
-# PASS(Prototype Augmentation and Self-Supervision)
+# PASS (Prototype Augmentation and Self-Supervision)
 PASS
