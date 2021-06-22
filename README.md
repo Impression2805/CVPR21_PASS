@@ -18,3 +18,6 @@ run `main.py`.
     pages     = {5871-5880}
 }
 ```
+
+## Reference
+<https://github.com/DRSAD/iCaRL>
