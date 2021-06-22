@@ -1,7 +1,7 @@
 ## PASS - Official PyTorch Implementation
 ![](./framework.png)
 
-**[CVPR2021 Oral] Prototype Augmentation and Self-Supervision for Incremental Learning**<br>
+# [CVPR2021 Oral] Prototype Augmentation and Self-Supervision for Incremental Learning**<br>
 Fei Zhu, Xu-Yao Zhang, Chuang Wang,  Fei Yin, Cheng-Lin Liu<br>
 [Paper](https://openaccess.thecvf.com/content/CVPR2021/papers/Zhu_Prototype_Augmentation_and_Self-Supervision_for_Incremental_Learning_CVPR_2021_paper.pdf)
 ### Usage 
