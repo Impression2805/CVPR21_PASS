@@ -7,7 +7,7 @@ Fei Zhu, Xu-Yao Zhang, Chuang Wang,  Fei Yin, Cheng-Lin Liu<br>
 ### Usage 
 run `main.py`.
 
-## Citation 
+### Citation 
 ```
 @InProceedings{Zhu_2021_CVPR,
     author    = {Zhu, Fei and Zhang, Xu-Yao and Wang, Chuang and Yin, Fei and Liu, Cheng-Lin},
@@ -19,7 +19,7 @@ run `main.py`.
 }
 ```
 
-## Reference
+### Reference
 Our implementation uses the source code from the following repositories:
 * <https://github.com/DRSAD/iCaRL>
 * <https://github.com/hankook/SLA>
