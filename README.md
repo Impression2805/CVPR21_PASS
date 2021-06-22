@@ -20,4 +20,5 @@ run `main.py`.
 ```
 
 ## Reference
+Our implementation uses the source code from the following repository:
 <https://github.com/DRSAD/iCaRL>
