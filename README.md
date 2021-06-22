@@ -6,7 +6,7 @@
 Fei Zhu, Xu-Yao Zhang, Chuang Wang,  Fei Yin, Cheng-Lin Liu<br>
 [Paper](https://openaccess.thecvf.com/content/CVPR2021/papers/Zhu_Prototype_Augmentation_and_Self-Supervision_for_Incremental_Learning_CVPR_2021_paper.pdf)
 ### Usage 
-To run the experiments in the paper, you just run `main.py`.
+run `main.py`.
 
 ## Citation 
 ```
