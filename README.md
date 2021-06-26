@@ -20,6 +20,6 @@ run `main.py`.
 ```
 
 ### Reference
-Our implementation uses the source code from the following repositories:
+Our implementation references the codes in the following repositories:
 * <https://github.com/DRSAD/iCaRL>
 * <https://github.com/hankook/SLA>
