@@ -65,9 +65,9 @@ def main():
         acc_up2now = []
         for i in range(current_task+1):
             if i == 0:
-                classes = [0, args.fg_nc]
+                classes = class_set[:args.fg_nc]
             else:
-                classes = [args.fg_nc + (i - 1) * task_size, args.fg_nc + i * task_size]
+                classes = class_set[(args.fg_nc + (i-1)*task_size):(args.fg_nc + i*task_size)]
 
             test_dataset = data_manager.get_dataset(test_transform, index=classes, train=False)
             test_loader = DataLoader(dataset=test_dataset, shuffle=False, batch_size=args.batch_size)
@@ -113,7 +113,7 @@ def main():
         model.to(device)
         model.eval()
 
-        classes = [0, args.fg_nc + current_task * task_size]
+        classes = class_set[:args.fg_nc+current_task*task_size]
         test_dataset = data_manager.get_dataset(test_transform, index=classes, train=False)
         test_loader = DataLoader(dataset=test_dataset, shuffle=False, batch_size=args.batch_size)
         correct, total = 0.0, 0.0
