@@ -40,6 +40,21 @@ parser.add_argument('--save_path', default='model_saved_check/', type=str, help=
 args = parser.parse_args()
 print(args)
 
+def map_new_class_index(y, order):
+    return np.array(list(map(lambda x: order.index(x), y)))
+
+
+def setup_data(test_targets, shuffle, seed):
+    order = [i for i in range(len(np.unique(test_targets)))]
+    if shuffle:
+        np.random.seed(seed)
+        order = np.random.permutation(len(order)).tolist()
+    else:
+        order = range(len(order))
+    class_order = order
+    print(100 * '#')
+    print(class_order)
+    return map_new_class_index(test_targets, class_order)
 
 def main():
     cuda_index = 'cuda:' + args.gpu
@@ -50,6 +65,7 @@ def main():
 
     model = protoAugSSL(args, file_name, feature_extractor, task_size, device)
     class_set = list(range(args.total_nc))
+    model.setup_data(shuffle=True, seed=1993)
 
     for i in range(args.task_num+1):
         if i == 0:
@@ -65,6 +81,7 @@ def main():
     test_transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5071, 0.4867, 0.4408), (0.2675, 0.2565, 0.2761))])
     print("############# Test for each Task #############")
     test_dataset = iCIFAR100('./dataset', test_transform=test_transform, train=False, download=True)
+    test_dataset.targets = setup_data(test_dataset.targets, shuffle=True, seed=1993)
     acc_all = []
     for current_task in range(args.task_num+1):
         class_index = args.fg_nc + current_task*task_size
@@ -100,6 +117,7 @@ def main():
 
     print("############# Test for up2now Task #############")
     test_dataset = iCIFAR100('./dataset', test_transform=test_transform, train=False, download=True)
+    test_dataset.targets = setup_data(test_dataset.targets, shuffle=True, seed=1993)
     for current_task in range(args.task_num+1):
         class_index = args.fg_nc + current_task*task_size
         filename = args.save_path + file_name + '/' + '%d_model.pkl' % (class_index)
