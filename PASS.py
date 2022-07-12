@@ -38,6 +38,25 @@ class protoAugSSL:
         self.test_dataset = iCIFAR100('./dataset', test_transform=self.test_transform, train=False, download=True)
         self.train_loader = None
         self.test_loader = None
+    
+    def map_new_class_index(self, y, order):
+        return np.array(list(map(lambda x: order.index(x), y)))
+
+    def setup_data(self, shuffle, seed):
+        train_targets = self.train_dataset.targets
+        test_targets = self.test_dataset.targets
+        order = [i for i in range(len(np.unique(train_targets)))]
+        if shuffle:
+            np.random.seed(seed)
+            order = np.random.permutation(len(order)).tolist()
+        else:
+            order = range(len(order))
+        self.class_order = order
+        print(100*'#')
+        print(self.class_order)
+
+        self.train_dataset.targets = self.map_new_class_index(train_targets, self.class_order)
+        self.test_dataset.targets = self.map_new_class_index(test_targets, self.class_order)
 
     def beforeTrain(self, current_task):
         self.model.eval()
