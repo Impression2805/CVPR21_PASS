@@ -37,3 +37,6 @@ python main_PASS_imagenet.py
 Our implementation references the codes in the following repositories:
 * <https://github.com/DRSAD/iCaRL>
 * <https://github.com/hankook/SLA>
+
+### Contact
+Fei Zhu (zhufei2018@ia.ac.cn)
