@@ -5,7 +5,11 @@
 Fei Zhu, Xu-Yao Zhang, Chuang Wang,  Fei Yin, Cheng-Lin Liu<br>
 [Paper](https://openaccess.thecvf.com/content/CVPR2021/papers/Zhu_Prototype_Augmentation_and_Self-Supervision_for_Incremental_Learning_CVPR_2021_paper.pdf)
 ### Usage 
+We run the code with torch version:1.10.0, python version:3.9.7
+* Train CIFAR100
+```
 run `main.py`.
+```
 
 ### Citation 
 ```
